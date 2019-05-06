@@ -27,11 +27,13 @@ class BASE():
             # la jt no esta en la seccion codigo, lo cual es algo raro.
             raise Exception
         return addr
+
     def _update_reg(self):
         for reg in constants.reg_list:
             if reg in self.inst.op_str[4:]:
                 return reg
         raise Exception
+
     def _update_table(self):
         # custom area
         raise Exception
@@ -40,6 +42,7 @@ class BASE():
         code = self._patch_inst(code, relocs)
         code = self._patch_table(code, relocs)
         return code
+
     def _patch_inst(self, code, relocs):
         for i, a in enumerate(self.inst.bytes):
             # bnry.write.dword(code, )
@@ -47,6 +50,7 @@ class BASE():
             code = bnry.write.byte(code, self.inst.rva + i, '\x90')
         self.del_reloc(relocs, self.inst.rva+3)
         return code
+
     def _patch_table(self, code, relocs):
         # custom area
         raise Exception

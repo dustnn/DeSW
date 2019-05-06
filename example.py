@@ -7,7 +7,6 @@ from engine import run
 
 def main():
 
-    # path = "C:\Users\GG\Desktop/spacesniffer.exe"
     # path = "C:\Users\GG\Desktop/keygenme2.exe"
     # path = 'C:\Users\GG\Desktop/Crackme-4-switch-x86.exe'
     # path = 'C:\Users\GG\Desktop/Crackme-4.exe'
@@ -24,7 +23,7 @@ def main():
             if _rlc.type == constants.HIGHLOW:
                 relocs.append(_rlc.address)
 
-    run(code, relocs, True)
+    [new_code, new_relocs] = run(code, relocs, True)
 
 
     return True

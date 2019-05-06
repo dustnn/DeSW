@@ -6,15 +6,12 @@ def _read_data(data, position, size):
 
 
 def dword(data, position):
-    b = _read_data(data, position, constants.dword_size)
-    a = struct.unpack('<L', b)[0]
-    return a
+    return struct.unpack('<L', _read_data(data, position, constants.dword_size))[0]
 
 
 def byte(data, position):
-    b = _read_data(data, position, constants.byte_size)
-    a = struct.unpack('<B', b)[0]
-    return a
-    # return read_data(data, position, constants.byte_size)
+    return struct.unpack('<B', _read_data(data, position, constants.byte_size))[0]
+
+
 
 

@@ -1,6 +1,4 @@
-import copy
 from modules import *
-import itertools
 from keystone import *
 
 
@@ -15,29 +13,6 @@ class SWITCH():
         self.indxr = None
 
         pass
-
-    # def _decompile_switch(self):
-    #     disasm_1 = iter(copy.copy(self.disasm))
-    #     disasm_2 = iter(copy.copy(self.disasm))
-    #     disasm_3 = iter(copy.copy(self.disasm))
-    #
-    #     next(disasm_1)
-    #     next(disasm_2)
-    #     next(disasm_2)
-    #     next(disasm_3)
-    #     next(disasm_3)
-    #     next(disasm_3)
-    #
-    #     for inst, inst1, inst2, inst3 in itertools.izip(self.disasm, disasm_1, disasm_2, disasm_3):
-    #
-    #         if is_jumper(inst3):
-    #             self.jmpr = JUMPER(inst3, self.code)
-    #
-    #             if is_indexer(inst2):
-    #                 self.indxr = INDEXER(inst2, self.code, self.jmpr)
-    #             return True
-    #
-    #     return False
 
     def decompile_switch(self):
         # como sabemos que en el desensamblado viene un switch, enocnes podemos obviar varios chequeos
@@ -104,7 +79,6 @@ class SWITCH():
         for i, opcode in enumerate(stub_opcode):
             code = bnry.write.byte(code, self.stub_rva + i, chr(opcode))
 
-        pass
         return code
 
     def find_space(self, code, size):

@@ -7,20 +7,6 @@ from switch.modules.structs import INST
 from utils import *
 from collections import deque
 
-# def disassemble(code, debug=False):
-#     # desensambla el codigo de self.code y retorna una lista con el desensamblado
-#     disasm_list = []
-#
-#     md = Cs(CS_ARCH_X86, CS_MODE_32)
-#     md.skipdata = True
-#     md.detail = False
-#
-#     for instruction in md.disasm(code, 0x1000):
-#         custom_inst = INST(instruction)
-#         disasm_list.append(custom_inst)
-#
-#
-#     return disasm_list
 
 def detect(code):
 
