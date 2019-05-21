@@ -1,4 +1,4 @@
-from utils import constants
+from DeSW.utils import constants
 
 
 def dword(data, position, value):

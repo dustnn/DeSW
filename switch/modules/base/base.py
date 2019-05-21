@@ -1,5 +1,5 @@
-from utils import constants
-import bnry
+from DeSW.utils import constants
+import DeSW.bnry as bnry
 import re
 
 

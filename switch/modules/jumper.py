@@ -1,7 +1,8 @@
 from itertools import count
-from utils import *
+from DeSW.utils import *
 from structs import TABLE
 from base import *
+
 
 # import bnry.write
 

@@ -1,4 +1,4 @@
-from utils import constants
+from DeSW.utils import constants
 import struct
 
 def _read_data(data, position, size):
